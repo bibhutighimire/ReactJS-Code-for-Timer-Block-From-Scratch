@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/styles.css";
 import { v4 as uuid } from "uuid";
-
+import Timer from './Timer';
+import AddNewTimer from './AddNewTimer';
 class TimerForm extends React.Component
 {
+  
 constructor(props)
 {
   super(props);
@@ -12,6 +14,7 @@ constructor(props)
     project:"",
     
   };
+ 
 } 
 handleChangeTitle = (e) =>
 {
@@ -29,14 +32,14 @@ handleChangeProject = (e) =>
     }
   )  
 }
-createNewTimer = (e) => {
-let project=this.state.project;
-let title=this.state.title;
-}
-render() {  
+
+render() { 
+  
+// const isOpen=false;
+//   if(isOpen) {
   return (
 
-    
+    <>
       <div className="timerContainer">
         <h2>Title</h2>
         <input type="text" name="title" value={this.state.title} onChange={this.handleChangeTitle}/>
@@ -47,6 +50,14 @@ render() {
       <button className="updateAndDeleteBtn">Cancel</button>
       </div>
       </div>   
+<Timer project={this.state.project} title={this.state.title} />
+</>
   );
+// }
+// else {
+//   return (
+//     <button className="toggleAbleTimerBtn" onClick={this.createNewTimer}>Add new Timer</button>
+//   );
+// }
 }}
 export default TimerForm;

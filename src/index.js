@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TimerForm from './components/TimerForm';
+import AddNewTimer from './components/AddNewTimer';
+
 
 ReactDOM.render(
   <React.StrictMode>
     
-    <TimerForm />
+    <AddNewTimer isOpen={false}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
