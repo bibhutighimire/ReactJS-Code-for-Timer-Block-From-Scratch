@@ -1,0 +1,125 @@
+.container {
+    width: 20%;
+    margin:0 auto;
+    height: auto;
+    margin-top:30px;
+    padding:5px;
+}
+
+.editableTimerListContainer {
+    margin:0 auto;
+    
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+}
+.logoHolder {
+    background-image: url(../images/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+   
+    margin-bottom: 10px;
+}
+.editableTimerContainer {
+    width: 80%;
+    margin:0 auto;
+    background-color: rgb(248, 241, 241);
+    border:2px solid gray;
+    border-radius: 15px;
+    padding:25px;
+    margin-bottom: 10px;   
+}
+.timerContainer {
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+    margin:0 auto;
+    background-color: rgb(248, 241, 241);
+    border:2px solid gray;
+    border-radius: 15px;
+    padding:25px;
+    margin-bottom: 10px; 
+}
+h1 {
+    margin-bottom: 5px;
+    padding-bottom:5px;
+    font-size: larger;
+    font-weight: bolder;
+    border-bottom: 1px dotted black;
+}
+h2 {
+    margin-bottom: 5px;
+    padding-bottom:5px;
+    font-size: large;
+    font-weight: bolder;
+    border-bottom: 1px dotted black;
+}
+input {
+    height: 45px;
+    font-size: large;
+}
+p {
+    margin:0 0 15px 0;
+    padding:0px;
+    font-size: large;
+}
+.fontAwesomeBinder {
+    display: flex;
+    width: 40px;
+    margin-bottom: 18px;
+    
+}
+.iconTrashAndEdit {
+    font-size: x-large;
+    margin-right: 10px;
+}
+
+time {
+    font-size: 22px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.timerBtn {
+    padding:10px;
+    background-color: rgb(184, 179, 179);
+    color:black;
+    font-size: 22px;
+    width: 100px;
+    margin:0 auto;
+}
+.timerBtn:hover {
+    background-color: rgb(138, 135, 135);
+    color:black;
+    font-size: 22px;
+}
+.updateAndDeleteBtnBinder {
+    display: flex;
+    flex-flow: row;    
+    margin-top: 15px;
+}
+.updateAndDeleteBtn {
+    padding:10px;
+    background-color: rgb(138, 135, 135);
+    color:black;
+    font-size: 22px; 
+    margin:0 15px 0 0; 
+   
+}
+.updateAndDeleteBtn:hover {
+   
+    background-color: rgb(121, 118, 118);
+   
+}
+.toggleAbleTimerBtn {
+    width: 100%;
+    padding:20px;
+    background-color: rgb(184, 179, 179);
+    color:black;
+    font-size: 22px;
+    margin: 0 auto;
+}

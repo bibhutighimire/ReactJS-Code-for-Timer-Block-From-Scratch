@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
+import TimerForm from './components/TimerForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <TimerForm />
   </React.StrictMode>,
   document.getElementById('root')
 );
