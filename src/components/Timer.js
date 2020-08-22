@@ -11,6 +11,7 @@ import {
 
 const Timer = (props) => {
   
+  
   function toggleFavorite(event) {
 event.preventDefault();
   }

@@ -12,6 +12,7 @@ constructor(props)
   this.state = {
     title:"",
     project:"",
+    isOpen: false,
     
   };
  
@@ -28,17 +29,32 @@ handleChangeProject = (e) =>
 {
   this.setState(
     {
+      isOpen:false,
       project:e.target.value
     }
   )  
 }
+createNewTimer =(props) => {
+
+    this.state.isOpen === true
+      ? this.setState({ isOpen: false })
+      : this.setState({ isOpen: true });
+  };
+
+  // render the Timer form only if isOpen is true / else do nothing
+  renderTimer() {
+    if (this.state.isOpen) {
+      return <Timer title={this.state.title} project={this.state.project}/>;
+
+    }
+   
+  }
 
 render() { 
   
 // const isOpen=false;
 //   if(isOpen) {
   return (
-
     <>
       <div className="timerContainer">
         <h2>Title</h2>
@@ -50,14 +66,11 @@ render() {
       <button className="updateAndDeleteBtn">Cancel</button>
       </div>
       </div>   
-<Timer project={this.state.project} title={this.state.title} />
+      {this.renderTimer()}
+{/* <Timer project={this.state.project} title={this.state.title} /> */}
 </>
   );
-// }
-// else {
-//   return (
-//     <button className="toggleAbleTimerBtn" onClick={this.createNewTimer}>Add new Timer</button>
-//   );
-// }
-}}
+ }
+
+}
 export default TimerForm;
