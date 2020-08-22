@@ -1,13 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AddNewTimer from './components/AddNewTimer';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import AddNewTimer from "./components/AddNewTimer";
 
 ReactDOM.render(
   <React.StrictMode>
-    
-    <AddNewTimer isOpen={false}/>
+    <AddNewTimer />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
