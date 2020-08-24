@@ -9,29 +9,42 @@ import {
   faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Timer = (props) => {
-  
-  
-  function toggleFavorite(event) {
-event.preventDefault();
-  }
+class Timer extends React.Component
+{  
+// constructor(props)
+// {
+//   super(props);
+//   this.state = {
+//     title:"",
+//     project:"",
+//     isOpen: false,
+//     newInputTimer:"",
+//     listOfTimers:[]
+//   }; 
+// } 
+
+  render(){
   return (
     <>
       <div className="timerContainer">
-        <h1>{props.title}</h1>
-        <p>{props.project}</p>
+<li key={uuid()}>
+        <h1>{this.props.titleProp}</h1>
+        <p>{this.props.projectProp}</p>
         <time>01:12:36</time>
       <div className="fontAwesomeBinder">
 
       <i className="fa fa-trash-o"  onClick={(e) => this.toggleFavorite()} > <FontAwesomeIcon className="iconTrashAndEdit" icon={faTrash} /> </i>
-      <i className="fa fa-edit-o"  onClick={(e) => this.toggleFavorite()} > <FontAwesomeIcon className="iconTrashAndEdit" icon={faEdit} /></i>  
-      
+      <i className="fa fa-edit-o"  onClick={(e) => this.toggleFavorite()} > <FontAwesomeIcon className="iconTrashAndEdit" icon={faEdit} /></i>       
         </div>
        
       <button className="timerBtn">START</button>
+      </li>
+
+    
       </div>
   
 </>      
   );
+  } 
 }
 export default Timer;

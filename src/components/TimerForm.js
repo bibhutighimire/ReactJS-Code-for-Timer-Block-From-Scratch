@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/styles.css";
-import { v4 as uuid } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import Timer from './Timer';
 import AddNewTimer from './AddNewTimer';
 class TimerForm extends React.Component
@@ -13,6 +13,9 @@ constructor(props)
     title:"",
     project:"",
     isOpen: false,
+    newTimer:"",
+    listOfTimers:[],
+    uuidv4:""
     
   };
  
@@ -34,26 +37,31 @@ handleChangeProject = (e) =>
     }
   )  
 }
-createNewTimer =(props) => {
+createNewTimer =(event) => {
 
     this.state.isOpen === true
       ? this.setState({ isOpen: false })
       : this.setState({ isOpen: true });
-  };
 
-  // render the Timer form only if isOpen is true / else do nothing
-  renderTimer() {
-    if (this.state.isOpen) {
-      return <Timer title={this.state.title} project={this.state.project}/>;
+const newTimer =  {
+  uniqueID:uuidv4(),
+  titleValue:[...this.state.title],
+  projectValue:[...this.state.project]
+ 
+};
 
-    }
-   
-  }
+const CurrentTimerList= [...this.state.listOfTimers];
+CurrentTimerList.push(newTimer);
+console.log(CurrentTimerList);
+
+this.setState({listOfTimers:CurrentTimerList,
+title:"",
+project:""
+});
+};
 
 render() { 
-  
-// const isOpen=false;
-//   if(isOpen) {
+
   return (
     <>
       <div className="timerContainer">
@@ -66,7 +74,18 @@ render() {
       <button className="updateAndDeleteBtn">Cancel</button>
       </div>
       </div>   
-      {this.renderTimer()}
+    <div>
+    if (this.state.isOpen) {
+      <ul>
+      {this.state.listOfTimers.map((indTimer)=> (
+       <Timer titleProp={indTimer.titleValue} projectProp={indTimer.projectValue} key={indTimer.uniqueID} />
+      )
+      )
+    }
+   </ul>
+}
+    </div>
+ 
 {/* <Timer project={this.state.project} title={this.state.title} /> */}
 </>
   );
