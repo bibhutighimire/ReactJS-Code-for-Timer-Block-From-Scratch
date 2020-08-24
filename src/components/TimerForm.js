@@ -75,7 +75,7 @@ render() {
       </div>
       </div>   
     <div>
-    if (this.state.isOpen) {
+    
       <ul>
       {this.state.listOfTimers.map((indTimer)=> (
        <Timer titleProp={indTimer.titleValue} projectProp={indTimer.projectValue} key={indTimer.uniqueID} />
@@ -83,7 +83,7 @@ render() {
       )
     }
    </ul>
-}
+
     </div>
  
 {/* <Timer project={this.state.project} title={this.state.title} /> */}
